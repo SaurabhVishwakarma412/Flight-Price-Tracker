@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="Login2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body>
+
+    <div class="wrapper">
+        <a href="index.html" class="icon-close">
+            <span>
+                <i class="fa-solid fa-xmark"></i>
+            </span>
+        </a>
+        
+        <div class="form-box Login">
+            <h2>Register</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="text-outline"></ion-icon></span>
+                    <input type="text" required>
+                    <label>User Name</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="lock-closed-outline"></ion-icon></span>
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label><input type="checkbox">Remember me</label>
+                </div>
+                <button type="submit" class="btn">Register</button>
+                
+
+            </form>
+        </div>
+    </div>
+    <script>
+        document.querySelector('.form-box form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from submitting normally
+            
+            // Get input values
+            const email = document.querySelector('input[type="email"]').value;
+            const password = document.querySelector('input[type="password"]').value;
+            
+            // Define correct credentials
+            const correctEmail = "user@gamail.com";
+            const correctPassword = "12345";
+            
+            // Check if credentials match
+            if (email === correctEmail && password === correctPassword) {
+                alert("Successfully logged in!");
+
+                // You can add additional actions here after successful login
+                window.location.href = "index.html";
+            } else {
+                alert("Invalid email or password. Please try again.");
+                window.location.href = "register.html";
+            }
+        });
+        
+        // Optional: Add functionality to close button
+        document.querySelector('.icon-close').addEventListener('click', function() {
+            document.querySelector('.wrapper').style.display = 'none';
+        });
+    </script>
+     <script></script>
+</body>
+</html>
