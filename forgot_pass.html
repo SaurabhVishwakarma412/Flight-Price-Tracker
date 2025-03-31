@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <link rel="stylesheet" href="Login2.css"> <!-- Using same stylesheet as login page -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="wrapper">
+        <span class="icon-close">
+            <i class="fa-solid fa-xmark"></i>
+        </span>
+        
+        <div class="form-box">
+            <h2>Forgot Password</h2>
+            <form action="#">
+                <div class="input-box">
+                    <span class="icon"><ion-icon name="mail-outline"></ion-icon></span>
+                    <input type="email" class="inp" required>
+                    <label>Email</label>
+                </div>
+                <button type="submit" class="btn">Reset Password</button>
+                <div class="login-register" style="margin: 30px;">
+                    <p>Remember your password? <a href="login.html" class="login-link">Login</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('.form-box form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form from submitting normally
+            
+            const email = document.querySelector('input[type="email"]').value;
+            const correctEmail = "user@gamail.com"; // Same email as in login page
+            
+            if (email === correctEmail) {
+                alert("Password reset link has been sent to your email!");
+                window.location.href = "login.html"; // Redirect to login page
+            } else {
+                alert("Email not found. Please check your email address.");
+            }
+        });
+
+        // Close button functionality
+        document.querySelector('.icon-close').addEventListener('click', function() {
+            document.querySelector('.wrapper').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
